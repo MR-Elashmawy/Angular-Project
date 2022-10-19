@@ -4,14 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './Components/admin/A.home/home.component' ;'./Components/user/U.home/home.component';
+import { HomeComponent } from './Components/user/U.home/home.component';
+import { AdminHomeComponent } from './Components/admin/admin-home/admin-home.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,
