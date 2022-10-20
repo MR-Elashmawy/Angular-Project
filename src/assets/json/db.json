@@ -1,0 +1,39 @@
+{
+    "orders": [
+        {
+            "id": 1,
+            "username": "Tarek Khalifa",
+            "date": "01/10/2022",
+            "price": 2000,
+            "status": "accepted"
+        },
+        {
+            "id": 2,
+            "username": "Tarek",
+            "date": "01/10/2022",
+            "price": 1000,
+            "status": "accepted"
+        },
+        {
+            "id": 3,
+            "username": "Noha",
+            "date": "01/10/2022",
+            "price": 3000,
+            "status": "pending"
+        },
+        {
+            "id": 4,
+            "username": "Omar",
+            "date": "01/11/2022",
+            "price": 5000,
+            "status": "pending"
+        },
+        {
+            "id": 5,
+            "username": "Mohamed",
+            "date": "22/10/2022",
+            "price": 1000,
+            "status": "accepted"
+        }
+    ]
+}

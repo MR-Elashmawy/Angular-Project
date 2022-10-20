@@ -1,0 +1,29 @@
+<!-- Orders Content -->
+<main>
+  <div class="container">
+    <app-orders-routes></app-orders-routes>
+
+    <div class="data">
+      <div class="data-head">
+        <span>#</span>
+        <span>Username</span>
+        <span>Date</span>
+        <span>Price</span>
+        <span>Status</span>
+      </div>
+
+      <div class="data-body" *ngFor="let order of allOrders">
+        <div class="show-data" *ngIf="order.status=='pending'">
+          <span>{{order.id}}</span>
+          <span>{{order.username}}</span>
+          <span>{{order.date}}</span>
+          <span>{{order.price}}</span>
+          <span>{{order.status}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Orders Content -->
