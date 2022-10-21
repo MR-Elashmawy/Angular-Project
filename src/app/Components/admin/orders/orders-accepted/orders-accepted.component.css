@@ -3,9 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     font-size: 1.1rem;
 }
+
+
 
 .data-head {
     display: flex;
@@ -14,15 +15,19 @@
     padding: 15px;
     color: white;
     padding-bottom: 10px;
+    font-weight: 600;
 }
+
+
 
 .show-data {
     display: flex;
     justify-content: center;
-    background-color: beige;
+    background-color: rgba(70, 80, 90, 0.5);
     padding: 15px;
     border-bottom: 1px dashed black;
-
+    color: black;
+    font-weight: 500;
 
 }
 

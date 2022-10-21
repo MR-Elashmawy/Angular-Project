@@ -1,3 +1,4 @@
+import { OrderItemComponent } from './Components/admin/orders/order-item/order-item.component';
 import { AdminHomeComponent } from './Components/admin/admin-home/admin-home.component';
 import { AllOrdersComponent } from './Components/admin/orders/all-orders/all-orders.component';
 import { OrdersPendingComponent } from './Components/admin/orders/orders-pending/orders-pending.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"dashboard/orders/pending", component:OrdersPendingComponent},
   {path:"dashboard/orders/accepted", component:OrdersAcceptedComponent},
   {path:"dashboard/orders/rejected", component:OrdersRejectedComponent},
+  {path:"dashboard/orders/:id", component:OrderItemComponent},
 ];
 
 @NgModule({

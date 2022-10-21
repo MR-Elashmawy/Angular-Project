@@ -1,29 +1,40 @@
-<!-- Orders Content -->
+<!-- All Orders Content -->
 <main>
   <div class="container">
     <app-orders-routes></app-orders-routes>
-
     <div class="data">
       <div class="data-head">
         <span>#</span>
         <span>Username</span>
-        <span>Date</span>
+        <span>Details</span>
         <span>Price</span>
+        <span>Date</span>
         <span>Status</span>
+        <span>Actions</span>
       </div>
 
       <div class="data-body" *ngFor="let order of allOrders">
         <div class="show-data">
           <span>{{order.id}}</span>
           <span>{{order.username}}</span>
-          <span>{{order.date}}</span>
+          <span>{{order.details}}</span>
           <span>{{order.price}}</span>
+          <span>{{order.date}}</span>
           <span>{{order.status}}</span>
+          <span class="d-flex gap-3"><a title="edit" routerLink="/dashboard/orders/{{order.id}}">
+            <i class="text-warning bi bi-pencil-square"></i>
+          </a>
+          <!-- <form action="/dashboard/orders/delete/{{order.id}}">
+            <a title="delete">
+              <i class="text-danger bi bi-trash"></i>
+            </a>
+          </form> -->
+        </span>
         </div>
       </div>
     </div>
-    
+
   </div>
 </main>
 
-<!-- Orders Content -->
+<!-- All Orders Content -->

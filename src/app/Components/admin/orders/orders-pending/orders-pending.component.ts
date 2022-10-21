@@ -9,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class OrdersPendingComponent implements OnInit {
 
   allOrders:any;
-
   constructor(private orderService: OrdersService) { }
-
+  
   ngOnInit(): void {
     this.orderService.getAllOrders().subscribe(
     (data)=>{            
@@ -21,6 +20,7 @@ export class OrdersPendingComponent implements OnInit {
       console.log(error);
     }
     );
+
   }
 
 }

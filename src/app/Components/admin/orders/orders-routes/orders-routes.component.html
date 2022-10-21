@@ -1,8 +1,6 @@
-<div class="row mt-4">
-  <div class="orders d-flex gap-3 justify-content-center">
-    <h4 class="text-center"><a routerLink="/dashboard/orders">All orders</a></h4>
-    <h4 class="text-center"><a routerLink="/dashboard/orders/accepted">Accepted orders</a></h4>
-    <h4 class="text-center"><a routerLink="/dashboard/orders/pending">Pending orders</a></h4>
-    <h4 class="text-center"><a routerLink="/dashboard/orders/rejected">Rejected orders</a></h4>
-  </div>
-</div>
+      <div class="orders">
+        <h4 class="text-center"><a routerLink="/dashboard/orders"routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}">All orders</a></h4>
+        <h4 class="text-center"><a routerLink="/dashboard/orders/accepted"routerLinkActive="active">Accepted orders</a></h4>
+        <h4 class="text-center"><a routerLink="/dashboard/orders/pending"routerLinkActive="active">Pending orders</a></h4>
+        <h4 class="text-center"><a routerLink="/dashboard/orders/rejected"routerLinkActive="active">Rejected orders</a></h4>
+      </div>

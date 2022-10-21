@@ -10,23 +10,28 @@ export class OrdersService {
 
    }
 
-  private $baseURL = "http://localhost:3000/orders";
+  private baseURL = "http://localhost:3000/orders";
 
   getAllOrders(){
-    return this.myClient.get(this.$baseURL);
+    return this.myClient.get(this.baseURL);
+  }
+
+
+  getSpecificOrder(id:number){
+    return this.myClient.get(this.baseURL+ "/"+ id );
   }
 
 
   addOrder(newOrder:any){
-    return this.myClient.post(this.$baseURL, newOrder);
+    return this.myClient.post(this.baseURL, newOrder);
   }
 
-  updateOrder(id:number, order:any){
-    return this.myClient.put(this.$baseURL+"/"+ id, order);
+  updateOrder(id:number, orderUpdated={}){
+    return this.myClient.put(this.baseURL+"/"+ id, orderUpdated);
   }
 
   deleteOrder(id:number){
-    return this.myClient.delete(this.$baseURL+"/"+ id);
+    return this.myClient.delete(this.baseURL+"/"+ id);
   }
 
 }
