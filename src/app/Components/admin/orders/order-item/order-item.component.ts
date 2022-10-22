@@ -40,8 +40,10 @@ export class OrderItemComponent implements OnInit {
     }
   
     this.orderService.updateOrder(this.id, updatedOrder).subscribe();
-
     this.successMsg = "Order updated successfully";
-  
+
+    setTimeout(() => {
+          this.successMsg = "";
+    }, 2000); //hide msg
   }
 }
