@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHomeComponent implements OnInit {
 
-  hi = 0;
   constructor() { }
 
   ngOnInit(): void {

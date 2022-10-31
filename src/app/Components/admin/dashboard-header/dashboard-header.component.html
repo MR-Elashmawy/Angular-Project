@@ -18,6 +18,11 @@
                 <a class="nav-link text-white" routerLink="dashboard/orders">Orders</a>
               </li>
             </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="loggedINAdmin">
+              <li class="logout nav-item">
+                <a class="nav-link text-white" (click)="logout()">Logout</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>

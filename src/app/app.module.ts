@@ -1,3 +1,5 @@
+import { AuthService } from './auth/auth.service'
+import { AuthGuard } from './auth/auth.guard'
 import { OrdersService } from './Services/admin/orders.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +16,8 @@ import { OrderItemComponent } from './Components/admin/orders/order-item/order-i
 import { OrdersPendingComponent } from './Components/admin/orders/orders-pending/orders-pending.component';
 import { OrdersRejectedComponent } from './Components/admin/orders/orders-rejected/orders-rejected.component';
 import { OrdersAcceptedComponent } from './Components/admin/orders/orders-accepted/orders-accepted.component';
+import { LoginComponent } from './Components/login/login.component';
+import { ErrorComponent } from './Components/error/error.component';
 
 
 
@@ -29,7 +33,9 @@ import { OrdersAcceptedComponent } from './Components/admin/orders/orders-accept
     OrdersRejectedComponent,
     OrdersAcceptedComponent,
     OrdersRoutesComponent,
-    AllOrdersComponent
+    AllOrdersComponent,
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,8 @@ import { OrdersAcceptedComponent } from './Components/admin/orders/orders-accept
     HttpClientModule
   ],
   providers: [
-    OrdersService
+    OrdersService, [AuthService, AuthGuard],
+
   ],
   bootstrap: [AppComponent]
 })

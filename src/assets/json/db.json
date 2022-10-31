@@ -21,7 +21,7 @@
       "date": "01/10/2022",
       "price": "3000",
       "details": "test",
-      "status": "Pending",
+      "status": "Accepted",
       "id": 3
     },
     {
@@ -40,5 +40,13 @@
       "status": "Rejected",
       "id": 5
     }
-  ]
+  ],
+  "admins": 
+    
+      {
+        "id": "admin@iti.com",
+        "password": "123456"
+      }
+    
+  
 }
