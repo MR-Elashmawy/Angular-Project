@@ -1,0 +1,29 @@
+<div class="container">
+<table class="table thead-dark table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Address</th>
+      <th scope="col">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of collection">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.address}}</td>
+      <td><i (click)="deleteResto(item.id)" class="fa fa-trash text-danger" style="font-size:25px;cursor:pointer;">
+      </i>
+      <a [routerLink]="['/update/{{item.id}}']">
+        <i class="fa fa-edit text-danger " style="font-size:25px;cursor:pointer;">
+        </i>
+      </a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>

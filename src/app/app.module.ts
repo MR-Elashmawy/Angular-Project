@@ -6,6 +6,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './Components/user/U.home/home.component';
 import { AdminHomeComponent } from './Components/admin/admin-home/admin-home.component';
+import { AddRestoComponent } from './Components/admin/add-resto/add-resto.component';
+import { ListRestoComponent } from './Components/admin/list-resto/list-resto.component';
+import { UpdateRestoComponent } from './Components/admin/update-resto/update-resto.component';
+
+
 
 
 
@@ -13,7 +18,11 @@ import { AdminHomeComponent } from './Components/admin/admin-home/admin-home.com
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AddRestoComponent,
+    ListRestoComponent,
+    UpdateRestoComponent
+
   ],
   imports: [
     BrowserModule,
