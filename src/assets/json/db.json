@@ -42,11 +42,9 @@
     }
   ],
   "admins": 
-    
       {
         "id": "admin@iti.com",
         "password": "123456"
       }
-    
   
 }
