@@ -1,0 +1,39 @@
+<div class="box">
+  <div class="my-2 w-25">
+    <label class="my-1">Categories:</label>
+    <select class="form-control">
+      <option value="1">All Resturants</option>
+      <option value="2">Bakery</option>
+      <option value="3">Fast Food</option>
+      <option value="4">Super Market</option>
+    </select>
+  </div>
+  <app-admin-producr-header></app-admin-producr-header>
+  <div class="row">
+    <div class="col-md-3 col-sm-12" *ngFor="let item of products" >
+      <div class="item">
+        <img src="{{item.image}}" alt="">
+        <div class="body">
+          <h4> {{item.title}}</h4>
+        </div>
+        <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
+          <button class="btn btn-success">
+            <a title="View" routerLink="/products/{{item.id}}">
+            <i class="text-warning bi bi-eye-fill "></i>
+           </a>
+          </button>
+          <button class="btn btn-success">
+              <a title="Edit" routerLink="/updateproducts/{{item.id}}">
+             <i class="text-warning bi bi-pencil-square"></i>
+
+            </a>
+          </button>
+          <button class="btn btn-success" (click)="deleteProduct(item.id)">
+            <a title="Delete">
+             <i class="text-danger bi bi-trash"></i>
+            </a>
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>

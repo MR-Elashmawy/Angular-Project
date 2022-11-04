@@ -1,0 +1,11 @@
+<app-admin-producr-header></app-admin-producr-header>
+<div *ngIf="product;else FalseBlock" class="alert alert-info text-center m-auto w-75">
+  <img style="width: 70px;" src="{{product.image}}" alt="">
+  <h4>Title: {{product.title}}</h4>
+  <h4>Price: {{product.price}}</h4>
+  <h4>Description: {{product.description}}</h4>
+</div>
+
+<ng-template #FalseBlock>
+  <h1 >Loading...</h1>
+</ng-template>
