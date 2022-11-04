@@ -1,3 +1,4 @@
+import { AuthService } from './auth/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularProject';
+
+  loggedOut = false;
+  constructor(authentication:AuthService){
+    if(sessionStorage.getItem('admin')){
+      authentication.isLoggedIn = true;
+    }
+  }
 }

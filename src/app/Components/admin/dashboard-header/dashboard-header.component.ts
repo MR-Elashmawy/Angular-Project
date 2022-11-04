@@ -12,11 +12,8 @@ export class DashboardHeaderComponent implements OnInit {
     
    }
 
-   loggedINAdmin:any;
 
   ngOnInit(): void {    
-    this.loggedINAdmin = sessionStorage.getItem('admin');
-    console.log(this.loggedINAdmin);
 
   }
 

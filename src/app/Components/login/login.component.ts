@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   login(){
         if( this.email == this.admin.id && this.password == this.admin.password){
-          sessionStorage.setItem('admin', JSON.stringify(this.admin));
+          sessionStorage.setItem('admin', JSON.stringify(this.admin.name));
           this.authentication.isLoggedIn = true;
           this.router.navigateByUrl('/dashboard');
       }else {

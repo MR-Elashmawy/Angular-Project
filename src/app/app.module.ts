@@ -1,3 +1,6 @@
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ProductsModule } from './products/products.module';
+import { SharedModule } from './shared/shared.module';
 import { AuthService } from './auth/auth.service'
 import { AuthGuard } from './auth/auth.guard'
 import { OrdersService } from './Services/admin/orders.service';
@@ -7,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+
 import { HomeComponent } from './Components/user/U.home/home.component';
 import { AdminHomeComponent } from './Components/admin/admin-home/admin-home.component';
 import { DashboardHeaderComponent } from './Components/admin/dashboard-header/dashboard-header.component';
@@ -17,7 +22,10 @@ import { OrdersPendingComponent } from './Components/admin/orders/orders-pending
 import { OrdersRejectedComponent } from './Components/admin/orders/orders-rejected/orders-rejected.component';
 import { OrdersAcceptedComponent } from './Components/admin/orders/orders-accepted/orders-accepted.component';
 import { LoginComponent } from './Components/login/login.component';
+import { AllRestaurantsComponent } from './Components/admin/restaurants/all-restaurants/all-restaurants.component';
+import { AddRestaurantComponent } from './Components/admin/restaurants/add-restaurant/add-restaurant.component';
 import { ErrorComponent } from './Components/error/error.component';
+import { RestaurantItemComponent } from './Components/admin/restaurants/restaurant-item/restaurant-item.component';
 
 
 
@@ -35,14 +43,23 @@ import { ErrorComponent } from './Components/error/error.component';
     OrdersRoutesComponent,
     AllOrdersComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    AllRestaurantsComponent,
+    AddRestaurantComponent,
+    RestaurantItemComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    ProductsModule,
+    Ng2SearchPipeModule,
+
+
   ],
   providers: [
     OrdersService, [AuthService, AuthGuard],

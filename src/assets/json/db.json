@@ -1,4 +1,9 @@
 {
+  "admins": {
+    "id": "admin@iti.com",
+    "name": "Admin",
+    "password": "123456"
+  },
   "orders": [
     {
       "username": "Tarek Khalifa",
@@ -37,14 +42,52 @@
       "date": "22/10/2022",
       "price": "1000",
       "details": "test",
-      "status": "Rejected",
+      "status": "Accepted",
       "id": 5
     }
   ],
-  "admins": 
-      {
-        "id": "admin@iti.com",
-        "password": "123456"
-      }
-  
+  "restaurants": [
+    {
+      "name": "KFC",
+      "description": "Chicken burger",
+      "address": "Elrehab",
+      "id": 1
+    },
+    {
+      "name": "MAC",
+      "description": "Sandwitches",
+      "address": "Elmansoura",
+      "id": 2
+    },
+    {
+      "name": "Fatoma",
+      "description": "Pasta",
+      "address": "Alexandria",
+      "id": 3
+    },
+    {
+      "name": "Buffalo Burger",
+      "description": "Burger Sandwitches",
+      "address": "Cairo,El-oboor",
+      "id": 4
+    },
+    {
+      "name": "Ketchup",
+      "description": "Elgiza",
+      "address": "ketchup@test.com",
+      "id": 5
+    },
+    {
+      "name": "El-Tahrer",
+      "description": "Koshry",
+      "address": "Zag",
+      "id": 6
+    },
+    {
+      "name": "Lebnan",
+      "description": "Sandwitches",
+      "address": "Nakhla-street",
+      "id": 7
+    }
+  ]
 }
