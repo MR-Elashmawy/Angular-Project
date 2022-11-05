@@ -1,9 +1,4 @@
 {
-  "admins": {
-    "id": "admin@iti.com",
-    "name": "Admin",
-    "password": "123456"
-  },
   "orders": [
     {
       "username": "Tarek Khalifa",
@@ -42,52 +37,39 @@
       "date": "22/10/2022",
       "price": "1000",
       "details": "test",
-      "status": "Accepted",
+      "status": "Rejected",
       "id": 5
     }
   ],
-  "restaurants": [
+  "admins": {
+    "id": "admin@iti.com",
+    "password": "123456"
+  },
+  "All Services": [
     {
-      "name": "KFC",
-      "description": "Chicken burger",
-      "address": "Elrehab",
-      "id": 1
-    },
+      "id": 1,
+      "image" :"../images/Groovy.png",
+      "name": "Groovy",
+      "category" : "Restuarants",
+      "location":"Mansoura",
+      "description": "Fast Food, Sandwiches, Burgers",
+      "status": "Accepted",
+      "Menue" : [{
+      "id" : 1,
+      "image" :"../images/Mexican_burger637809096634451963.webp",
+      "name":"Deal Box",
+      "details":"3 Crispy chicken strips pieces with French fries, rice, bread and Groovy sauce.",
+      "price": "EGP 49.99",
+      "type": "most selling"
+      },
     {
-      "name": "MAC",
-      "description": "Sandwitches",
-      "address": "Elmansoura",
-      "id": 2
-    },
-    {
-      "name": "Fatoma",
-      "description": "Pasta",
-      "address": "Alexandria",
-      "id": 3
-    },
-    {
-      "name": "Buffalo Burger",
-      "description": "Burger Sandwitches",
-      "address": "Cairo,El-oboor",
-      "id": 4
-    },
-    {
-      "name": "Ketchup",
-      "description": "Elgiza",
-      "address": "ketchup@test.com",
-      "id": 5
-    },
-    {
-      "name": "El-Tahrer",
-      "description": "Koshry",
-      "address": "Zag",
-      "id": 6
-    },
-    {
-      "name": "Lebnan",
-      "description": "Sandwitches",
-      "address": "Nakhla-street",
-      "id": 7
+        "id" : 2,
+        "image" :"../images/Cheesy Fries.png",
+        "name":"Cheesy Fries",
+        "details":"Thousand Island Sauce",
+        "price": "EGP 33.00",
+        "type": "most selling"
+      }]
     }
   ]
 }

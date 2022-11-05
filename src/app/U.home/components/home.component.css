@@ -1,0 +1,17 @@
+.banner {
+  background-image: url(../../../assets/images/4.png);
+  background-attachment: fixed;
+  height: 75vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.custom_home .logo_div a>img {
+  max-width: 162px;
+}
+
+.homeCard:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  box-shadow: 1px 1px 15px rgb(107 107 109);
+}

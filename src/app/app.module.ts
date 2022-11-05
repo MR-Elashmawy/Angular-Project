@@ -1,70 +1,47 @@
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { ProductsModule } from './products/products.module';
-import { SharedModule } from './shared/shared.module';
-import { AuthService } from './auth/auth.service'
-import { AuthGuard } from './auth/auth.guard'
-import { OrdersService } from './Services/admin/orders.service';
+import { ProfileModule } from './profile/profile.module';
+import { ProfileComponent } from './profile/components/profile.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
-
-import { HomeComponent } from './Components/user/U.home/home.component';
-import { AdminHomeComponent } from './Components/admin/admin-home/admin-home.component';
-import { DashboardHeaderComponent } from './Components/admin/dashboard-header/dashboard-header.component';
-import { OrdersRoutesComponent } from './Components/admin/orders/orders-routes/orders-routes.component';
-import { AllOrdersComponent } from './Components/admin/orders/all-orders/all-orders.component';
-import { OrderItemComponent } from './Components/admin/orders/order-item/order-item.component';
-import { OrdersPendingComponent } from './Components/admin/orders/orders-pending/orders-pending.component';
-import { OrdersRejectedComponent } from './Components/admin/orders/orders-rejected/orders-rejected.component';
-import { OrdersAcceptedComponent } from './Components/admin/orders/orders-accepted/orders-accepted.component';
-import { LoginComponent } from './Components/login/login.component';
-import { AllRestaurantsComponent } from './Components/admin/restaurants/all-restaurants/all-restaurants.component';
-import { AddRestaurantComponent } from './Components/admin/restaurants/add-restaurant/add-restaurant.component';
-import { ErrorComponent } from './Components/error/error.component';
-import { RestaurantItemComponent } from './Components/admin/restaurants/restaurant-item/restaurant-item.component';
-
-
+import { CartModule } from './cart/cart.module';
+import { ProductsModule } from './products/products.module';
+import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ContactComponent } from './contact/components/contact.component';
+import { AboutComponent } from './about/components/about.component';
+import { LogInComponent } from './log-in/components/log-in.component';
+import { RegisterdComponent } from './registerd/components/registerd.component';
+import { HomeComponent } from './U.home/components/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ContactComponent,
+    AboutComponent,
+    LogInComponent,
+    RegisterdComponent,
     HomeComponent,
-    AdminHomeComponent,
-    AllOrdersComponent,
-    DashboardHeaderComponent,
-    OrderItemComponent,
-    OrdersPendingComponent,
-    OrdersRejectedComponent,
-    OrdersAcceptedComponent,
-    OrdersRoutesComponent,
-    AllOrdersComponent,
-    LoginComponent,
-    ErrorComponent,
-    AllRestaurantsComponent,
-    AddRestaurantComponent,
-    RestaurantItemComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     SharedModule,
     ProductsModule,
+    CartModule,
+    ProfileModule,
+    HttpClientModule,
+    FormsModule,
     Ng2SearchPipeModule,
 
-
   ],
-  providers: [
-    OrdersService, [AuthService, AuthGuard],
-
-  ],
+  providers: [[AuthService, AuthGuard]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

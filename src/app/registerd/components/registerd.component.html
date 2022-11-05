@@ -1,0 +1,102 @@
+<section class="register_sec">
+  <div class="layout-container mt-3">
+    <div class="register-container">
+      <h1 class="text-center my-5 fs-3 fw-bold">Create an Account</h1>
+      <div class="my-5">
+        <div class="line">
+          <span class="p-4 fs-4 fw-bold"></span>
+        </div>
+      </div>
+      <form id="signupForm" name="clientsData" method="POST">
+        <div class="row mb-3">
+          <label id="lblFirstName" class="control-label col-sm-4 pt-3">
+            First Name</label>
+          <div class="col-sm-8">
+            <input id="firstName" type="text" class="form-control" name="firstName" value="" required>
+            <p class="error f-14 mt-1"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="control-label col-sm-4 pt-3">Last Name</label>
+          <div class="col-sm-8">
+            <input id="lastName" type="text" class="form-control" name="lastName" value="" required>
+            <p class="error f-14 mt-1"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="control-label col-sm-4 pt-3">Email</label>
+          <div class="col-sm-8">
+            <input id="email" type="text" class="form-control" name="email" value="" required>
+            <p class="error f-14 mt-1"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="control-label col-sm-4 pt-3">Password</label>
+          <div class="col-sm-8 password">
+            <div class="form-control">
+              <input id="password" type="password" autocomplete="current-password" name="password" required>
+              <span class="f-12 clickable bg-white pl-1">show</span>
+            </div>
+            <p class="error f-14 mt-1"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="control-label col-sm-4 pt-3">Confirm Password</label>
+          <div class="col-sm-8">
+            <input id="confirmPassword" type="password" autocomplete="current-password" class="form-control"
+              name="confirmPassword" required>
+            <p class="error f-14 mt-1"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="control-label col-sm-4 pt-3">Gender</label>
+          <div class="col-sm-8">
+            <div class="d-flex justify-content-between">
+              <div class="radio-item">
+                <input type="radio" id="radioMale" name="gender" value="male" required>
+                <label class="m-0 f-14 text-center py-2 px-4 b-a" for="radioMale">Male</label>
+              </div>
+              <div class="radio-item"><input type="radio" id="radioFemale" name="gender" value="female" required>
+                <label class="m-0 f-14 text-center py-2 px-4 b-a" for="radioFemale">Female</label>
+              </div>
+            </div>
+            <p class="error f-14 mt-1"></p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="control-label col-sm-4 pt-2 f-14 f-500">Date of birth</label>
+          <div class="col-sm-8 birthdate">
+            <div class="d-block">
+              <div class="input-container">
+                <input id="dateOfBirth" type="text" value="" name="dateOfBirth" class="form-control" required>
+              </div>
+            </div>
+            <span class="icon clickable">
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calendar-alt"
+                class="svg-inline--fa fa-calendar-alt fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z">
+                </path>
+              </svg>
+            </span>
+          </div>
+        </div>
+        <p>By creating an account you agree to the
+          <!-- -->&nbsp;<a href="/egypt/privacy" target="_blank" class="green-text">Privacy Policy</a>&nbsp;
+          <!-- -->and to the
+          <!-- -->&nbsp;<a href="/egypt/terms" target="_blank" class="primary-text">terms of use</a>
+        </p>
+        <button id="submitBtn" class="primary-button mt-4 fw-bolder" type="submit">Create your account</button>
+      </form>
+      <p class="py-4 text-center">
+        <span style="font-size: 1.01563rem;">Already have an account?
+          <!-- -->&nbsp;<a class="primary-text" routerLink="/login">Login</a>
+        </span>
+      </p>
+    </div>
+  </div>
+</section>
+<script src="https://kit.fontawesome.com/8321aaa57d.js" crossorigin="anonymous"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/regester.js"></script>
