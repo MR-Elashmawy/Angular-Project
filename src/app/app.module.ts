@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { CartModule } from './cart/cart.module';
 import { ProductsModule } from './products/products.module';
 import { SharedModule } from './shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ContactComponent } from './contact/components/contact.component';
 import { AboutComponent } from './about/components/about.component';
@@ -39,6 +39,7 @@ import { HomeComponent } from './U.home/components/home.component';
     HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule,
+    ReactiveFormsModule
 
   ],
   providers: [[AuthService, AuthGuard]],

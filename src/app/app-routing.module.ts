@@ -21,9 +21,9 @@ const routes: Routes = [
   {path:"register", component:RegisterdComponent},
   {path:"details", component:ProductDetailsComponent},
   {path:"cart", component:CartComponent},
-  {path:"profile", component:ProfileComponent},
+  {path:"profile", component:ProfileComponent, canActivate:[AuthGuard]},
   // {path:"**", component:HomeComponent}
-  // {path:"**", redirectTo:"Home"}
+  // {path:"**", component:ErrorComponent}
 ];
 
 @NgModule({

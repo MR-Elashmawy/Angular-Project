@@ -1,36 +1,50 @@
-<section class="register_sec">
-  <div class="layout-container mt-5">
-    <div class="register-container">
-      <h1 class="text-center my-5 fs-3 fw-bold">Welcome To Talabat</h1>
-
-      <form id="loginForm" name="loginData" method="POST">
-        <div class="row mb-3">
-          <label class="control-label col-sm-2 pt-3">Email</label>
-          <div class="col-sm-8">
-            <input type="text" id="email" class="form-control" name="email" autocomplete="username">
-            <p class="error f-14 mt-1"></p>
+<section class="d-flex vh-100 py-5 mb-5">
+  <div class="container py-2">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="mt-5 col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Login</h3>
+            <form class="mx-1 mx-md-4" [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="row">
+                <div class="col-12 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="email" id="form3Example4c" formControlName="email"
+                      [ngClass]="email.errors && (email.touched || email.dirty) ? 'is-invalid' : ''"
+                      class="form-control" placeholder="Enter your email..."
+                      [ngClass]="!email.errors  ? 'is-valid' : ''" />
+                    <p class="invalid-feedback" *ngIf="email.errors && (email.touched || email.dirty)">
+                      Please enter a valid email address
+                    </p>
+                    <p class="text-danger" *ngIf="errorMsg">
+                      {{errorMsg}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-outline">
+                    <input type="password" id="form3Example3c" formControlName="password"
+                      [ngClass]="password.errors && (password.touched || password.dirty) ? 'is-invalid' : ''"
+                      class="form-control" placeholder="Enter your password..."
+                      [ngClass]="!password.errors  ? 'is-valid' : ''" />
+                    <p class="invalid-feedback" *ngIf="password.errors && (password.touched || password.dirty)">
+                      Password must be atleast 8 characters
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-1 pt-2">
+                <input class="btn w-100" type="submit" value="Login" />
+              </div>
+            </form>
+            <p class="text-center mt-5">
+              Don't have an account? <span><a routerLink="/register">Create an account</a></span>
+            </p>
           </div>
         </div>
-
-        <div class="row mb-3">
-          <label class="control-label col-sm-2 pt-3">Password</label>
-          <div class="col-sm-8 password">
-            <div class="form-control">
-              <input type="password" id="password" autocomplete="current-password" name="password">
-              <span class="f-12 clickable bg-white pl-1">show</span>
-            </div>
-            <p class="error f-14 mt-1"></p>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <button id="loginBtn" class="primary-button login-btn fw-bolder" type="submit">Login</button>
-        </div>
-      </form>
-      <p class="py-4 text-center">
-        <span style="font-size: 1.01563rem;">Don't have an account?
-          <a class="primary-text" routerLink="/register">Create an account</a>
-        </span>
-      </p>
+      </div>
     </div>
   </div>
 </section>
