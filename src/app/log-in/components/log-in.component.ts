@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { LogInService } from './../services/log-in.service';
 import { AuthService } from './../../auth/auth.service';
@@ -17,11 +18,14 @@ export class LogInComponent implements OnInit {
   errorMsg = "";
   users: any;
 
+  
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private loginService: LogInService,
-    private router: Router) {
+    private router: Router,
+    private titlePage: Title) {
+      titlePage.setTitle("Login");
   }
 
   ngOnInit(): void {

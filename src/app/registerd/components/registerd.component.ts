@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { RegisterdService } from './../services/registerd.service';
 import { Router } from '@angular/router';
@@ -24,7 +25,9 @@ export class RegisterdComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private registerService: RegisterdService,
-    private router: Router) {
+    private router: Router,
+    private titlePage: Title) {
+      titlePage.setTitle("Register");
   }
 
   ngOnInit(): void {

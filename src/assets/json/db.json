@@ -54,33 +54,6 @@
       "password": "Tarek@123",
       "gender": "male",
       "image": "default.png"
-    },
-    {
-      "id": "ahmed@yahoo.com",
-      "first_name": "Ahmed",
-      "last_name": "Mohamed",
-      "email": "ahmed@yahoo.com",
-      "password": "Tarek@123",
-      "gender": "male",
-      "image": "default.png"
-    },
-    {
-      "id": "tarek@iti.com",
-      "first_name": "Tarek",
-      "last_name": "ITI",
-      "email": "tarek@iti.com",
-      "password": "Tarek@123",
-      "gender": "male",
-      "image": "default.png"
-    },
-    {
-      "id": "ahmed@iti.com",
-      "first_name": "Ahmed",
-      "last_name": "Mohamed",
-      "email": "ahmed@iti.com",
-      "password": "Ahmed@123",
-      "gender": "male",
-      "image": "default.png"
     }
   ],
   "All Services": [
