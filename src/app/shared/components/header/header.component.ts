@@ -8,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   loggedIn = false;
-  constructor(private authentication:AuthService, private router:Router) { 
+  constructor(public authentication:AuthService, private router:Router) { 
     if(sessionStorage.getItem('user')){
       this.loggedIn = true;
     }
@@ -19,7 +18,7 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.authentication.isLoggedIn = false;
-    sessionStorage.clear();
+    sessionStorage.setItem('user', '');
 
   } //end of logout
 

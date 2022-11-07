@@ -37,20 +37,20 @@
               <li class="nav-item ml-4 custom_li">
                 <a  routerLink="/contact" class="nav-link">Contact us </a>
               </li>
-              <li *ngIf="!loggedIn" class="nav-item ml-4 custom_li login ">
+              <li *ngIf='(!authentication.isLoggedIn)' class="nav-item ml-4 custom_li login ">
                 <a routerLink="/login" class="nav-link"> Log in </a>
               </li>
-              <li *ngIf="loggedIn" class="nav-item ml-4 custom_li login ">
+              <li  *ngIf='(authentication.isLoggedIn)' class="nav-item ml-4 custom_li login ">
                 <div class="dropdown">
                   <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Welcome
                   </button>
                   <ul class="dropdown-menu">
                     <li class="nav-item ml-4 custom_li">
-                      <a routerLink="/profile" class="nav-link text-dark"> Profile</a>
+                      <a routerLink="/profile" class="nav-link text-white"> Profile</a>
                     </li>
                     <li class="nav-item ml-4 custom_li">
-                      <a (click)="logout()" routerLink="/" class="nav-link text-dark"> Logout</a>
+                      <a (click)="logout()" routerLink="/" class="nav-link text-white"> Logout</a>
                     </li>
                   </ul>
                 </div>

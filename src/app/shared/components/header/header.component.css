@@ -22,6 +22,10 @@ a {
   background-color: transparent;
 }
 
+.dropdown-toggle {
+  border: none !important;
+}
+
 .dropdown-menu {
   background-color: #FF9459;
 }
