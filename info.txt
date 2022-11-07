@@ -1,0 +1,6 @@
+install json server:
+	npm i json-server -g
+
+
+run json file:
+	json-server --watch src/assets/json/db.json
