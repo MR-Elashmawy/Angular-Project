@@ -1,51 +1,55 @@
-<section class="product-update">
-  <div class="container">
-      <div class="row">
-          <div class="col-12 mt-1">
-              <div class="col-12 text-center text-uppercase">
-                  <h2 class="text-warning my-4">Product information</h2>
-              </div>
-          </div>
-          <main class="row">
-              <div class="col-lg-4 col-md-6 col-sm-8 mx-auto mb-1">
-                  <div class="col-12">
-                      <div *ngIf="product">
-                          <div class="row mb-3">
-                            <div class="col-12">
-                              <div class="mb-3">
-                                <label for="Image">Image</label>
-                                <img src="{{base64}}" style="height: 70px; width: 70px;">
-                                <input type="file" class="form-control" (change)="getImagePath($event)" #image >
-                              </div>
-                          </div>
-                              <div class="col-12">
-                                  <div class="mb-3">
-                                      <label for="fname" class="form-label">Title</label>
-                                      <input type="text" name="fname" id="fname" class="form-control"
-                                          value="{{product.title}}"#name>
-                                  </div>
-                              </div>
-                              <div class="col-12">
-                                  <div class="mb-3">
-                                      <label for="product-price" class="form-label">price</label>
-                                      <input type="text" name="product-price" id="product-price" class="form-control"
-                                      value="{{product.price}}" #price>
-                                  </div>
-                              </div>
-                              <div class="col-12">
-                                  <div class="mb-3">
-                                        <label class="form-label">Product description</label>
-                                          <textarea class="form-control" style="height: 100px" #description>{{product.description}}</textarea>
-                                  </div>
-                              </div>
-                              <div class="form-group text-center">
-                                  <button name="update" id="update" type="submit" class="btn btn-outline-warning" (click)="updateProduct(product)">Update product</button>
-                              </div>
-                          </div>
-                      </div>
+<app-admin-producr-header></app-admin-producr-header>
+<section class="vh-100 py-5 mb-5">
+  <div class="container py-2">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="mt-5 col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Edit product Informations</h3>
+
+                <div class="col-lg-4 col-md-6 col-sm-8 mx-auto mb-1">
+                  <div class="col-md-6 mb-4">
+                    <label for="image" class="form-label"> Product Image</label>
+                    <img src="{{base64}}" style="height: 70px; width: 70px;">
+                    <input class="form-control form-control-sm" style="width:auto;" id="formFileSm" type="file"
+                      (change)="getImagePath($event)">
                   </div>
-              </div>
-          </main>
-      </div>
+                    <div class="col-12">
+                        <div *ngIf="product">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" name="title" id="title" class="form-control"
+                                            value="{{product.title}}" #title>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="product-price" class="form-label">Total price</label>
+                                        <input type="text" name="product-price" id="product-price" class="form-control"
+                                        value="{{product.price}}" #price>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="product Description" style="height: 100px" #description>{{product.description}}</textarea>
+                                            <label>Oder Description</label>
+                                          </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <button name="update" id="update" type="submit" class="btn btn-outline-warning" (click)="updateProduct(title,price, description)">Update product</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+    </div>
   </div>
 </section>

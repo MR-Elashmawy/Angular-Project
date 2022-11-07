@@ -1,3 +1,8 @@
 .form {
   background-color: rgba(70, 80, 90, 0.5);
 }
+.btn, .btn:hover {
+  background-color: black !important;
+  color: white !important;
+  font-size: 1.2rem;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminProductsService } from 'src/app/Services/admin-products.service';
 
 @Component({
@@ -8,8 +9,8 @@ import { AdminProductsService } from 'src/app/Services/admin-products.service';
 })
 export class AdminProductsComponent implements OnInit {
 
-  constructor(public myService: AdminProductsService ) { }
-  deletedprotect:any=[];
+  constructor(public myService: AdminProductsService ,private router: Router) { }
+  deletedproduct:any=[];
   products :any;
   ngOnInit(): void {
     this.myService.getAllProducts().subscribe(
@@ -20,9 +21,12 @@ export class AdminProductsComponent implements OnInit {
     )
   }
   deleteProduct(item: number){
-    this.deletedprotect.splice(item-1,1)
+    this.deletedproduct.splice(item-1,1)
     this.myService.deleteProduct(item).subscribe((result)=>{
-    });
+      alert("Product deleted successfully,Refresh The page");
+    }); setTimeout(() => {
+      this.router.navigate(['/products']);
+    },1000);
   }
 
 

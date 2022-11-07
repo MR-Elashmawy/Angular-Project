@@ -1,50 +1,46 @@
 {
   "products": [
     {
-      "fname": "dealBox",
+      "id": 0,
+      "title": "dealBox",
       "price": "30",
       "description": "blablabla",
-      "id": 0
+      "image": "/assets/images/food1.png"
     },
     {
       "id": 1,
-      "fname": "CheesyFries",
+      "title": "CheesyFries",
       "price": 30,
       "description": "Seasoned French fries with cheddar cheese sauce.",
-      "imgSrc": "/assets/images/Cheesy Fries.png",
-      "count": 0
+      "image": "/assets/images/Cheesy Fries.png"
     },
     {
       "id": 2,
-      "fname": "islandSauce",
+      "title": "islandSauce",
       "price": 7,
       "description": "Thousand Island Sauce",
-      "imgSrc": "/assets/images/food1.png",
-      " count": 0
+      "image": "/assets/images/food1.png"
     },
     {
       "id": 3,
-      "fname": "boxDeal",
+      "title": "boxDeal",
       "price": 50,
       "description": "Seasoned French fries with cheddar cheese sauce.",
-      "imgSrc": "/assets/images/Cheesy Fries.png",
-      "count": 0
+      "image": "/assets/images/Cheesy Fries.png"
     },
     {
       "id": 4,
-      "fname": "soup",
+      "title": "soup",
       "price": 25,
       "description": "Thousand Island Sauce",
-      "imgSrc": "/assets/images/food1.png",
-      "count": 0
+      "image": "/assets/images/food1.png"
     },
     {
       "id": 5,
-      "fname": "crispy",
+      "title": "crispy",
       "price": 30,
       "description": "Seasoned French fries with cheddar cheese sauce.",
-      "imgSrc": "/assets/images/Cheesy Fries.png",
-      "count": 0
+      "image": "/assets/images/Cheesy Fries.png"
     }
   ]
 }

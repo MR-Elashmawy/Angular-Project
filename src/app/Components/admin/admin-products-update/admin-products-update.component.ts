@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminProductsService } from 'src/app/Services/admin-products.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class AdminProductsUpdateComponent implements OnInit {
   product:any;
   base64:any='';
   form!:FormGroup;
-  constructor(private myActivated: ActivatedRoute, public myService: AdminProductsService,private build:FormBuilder) {
+  constructor(private myActivated: ActivatedRoute, public myService: AdminProductsService,private router: Router) {
     this.id = myActivated.snapshot.params['id'];
   }
 
@@ -24,12 +24,12 @@ export class AdminProductsUpdateComponent implements OnInit {
         this.product= data;
       }
       );
-      this.form=this.build.group({
-        title: ['',Validators.required],
-        price: ['',Validators.required],
-        description: ['',Validators.required],
-        image: ['' ,Validators.required],
-      })
+      // this.form=this.build.group({
+      //   title: ['',Validators.required],
+      //   price: ['',Validators.required],
+      //   description: ['',Validators.required],
+      //   image: ['' ,Validators.required],
+      // })
   }
   getImagePath(event:any){
     const file=event.target.files[0];
@@ -40,11 +40,18 @@ export class AdminProductsUpdateComponent implements OnInit {
       this.form.get('image')?.setValue(this.base64);
     }
   }
-  updateProduct(item:any){
-    this.form.get('tiitle')?.setValue(item.tiitle);
-    this.form.get('price')?.setValue(item.price);
-    this.form.get('description')?.setValue(item.description);
-    this.form.get('image')?.setValue(item.image);
-    this.base64=item.image;
+  updateProduct(title:any,price:any, description:any){
+    let updatedProduct = {
+      title:title.value,
+      price:price.value,
+      description:description.value,
+      image:this.base64
+    }
+
+    this.myService.updateProduct(this.id, updatedProduct).subscribe();
+    alert("Product Updated successfully");
+    setTimeout(() => {
+      this.router.navigate(['/products']);
+    }, 1500);
   }
 }
