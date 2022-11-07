@@ -65,7 +65,7 @@
       "location": "Mansoura",
       "description": "Fast Food, Sandwiches, Burgers",
       "status": "Accepted",
-      "Menue": [
+      "Menu": [
         {
           "id": 1,
           "image": "../images/Mexican_burger637809096634451963.webp",

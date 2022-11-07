@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
@@ -12,7 +13,10 @@ export class AllProductsComponent implements OnInit {
   categories:any[] =[];
   // searchKey:string ="";
   searchText: any;
-  constructor(private service:ProductsService) { }
+  constructor(private service:ProductsService, private titlePage: Title) { 
+    titlePage.setTitle("Services");
+
+  }
 
   ngOnInit(): void {
     this.getProducts();

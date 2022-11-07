@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private titlePage: Title) { 
+    titlePage.setTitle("Product Details");
+  }
   ngOnInit(): void {
   }
 

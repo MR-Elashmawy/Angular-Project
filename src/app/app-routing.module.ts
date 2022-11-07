@@ -15,12 +15,12 @@ const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"services", component:AllProductsComponent},
   // {path:"services", component:AllProductsComponent, canActivate:[AuthGuard]},
+  {path:"services/details/:id", component:ProductDetailsComponent},
+  {path:"cart", component:CartComponent},
   {path:"about", component:AboutComponent},
   {path:"contact", component:ContactComponent},
   {path:"login", component:LogInComponent},
   {path:"register", component:RegisterdComponent},
-  {path:"details", component:ProductDetailsComponent},
-  {path:"cart", component:CartComponent},
   {path:"profile", component:ProfileComponent, canActivate:[AuthGuard]},
   // {path:"**", component:HomeComponent}
   // {path:"**", component:ErrorComponent}
