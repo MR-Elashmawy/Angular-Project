@@ -14,8 +14,10 @@ export class RegisterdService {
     return this.myClient.post(this.baseURL, newUser);
   }
 
-  get(baseURL:any){
 
+
+  getUser(id:string){
+    return this.myClient.get(this.baseURL+ "/"+ id );
   }
 
 

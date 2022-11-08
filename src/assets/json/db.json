@@ -53,7 +53,7 @@
       "email": "tarek@yahoo.com",
       "password": "Tarek@123",
       "gender": "male",
-      "image": "default.png"
+      "image": "assets/images/users/default_user.png"
     }
   ],
   "All Services": [
@@ -65,7 +65,7 @@
       "location": "Mansoura",
       "description": "Fast Food, Sandwiches, Burgers",
       "status": "Accepted",
-      "Menu": [
+      "menu": [
         {
           "id": 1,
           "image": "../images/Mexican_burger637809096634451963.webp",

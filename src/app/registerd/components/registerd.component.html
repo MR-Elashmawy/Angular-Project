@@ -40,6 +40,9 @@
                     <p class="invalid-feedback" *ngIf="email.errors && (email.touched || email.dirty)">
                       Email must be valid!
                     </p>
+                    <p class="col-12 text-danger" *ngIf="duplicatedEmail">
+                      {{duplicatedEmail}}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -90,11 +93,12 @@
                     Gender required
                   </p>
                 </div>
-
+                
                 <div class="col-md-6 mb-4">
                   <h6 class="mb-2 pb-1">Upload your photo (optional)</h6>
+                  <img *ngIf="userImage" src="{{userImage}}">
                   <input class="form-control form-control-sm" id="formFileSm" type="file"
-                    (change)="fileSelected($event)">
+                    (change)="imageSelected($event)">
                   <p class="text-danger" *ngIf="imgExtensionInvalid">
                     {{errorMsg}}
                   </p>

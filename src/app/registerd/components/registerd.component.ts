@@ -19,15 +19,16 @@ export class RegisterdComponent implements OnInit {
   errorMsg = "";
   successMsg = "";
   passwordError = "";
-  newUser = { id:"", first_name: "", last_name: "", email: "", password: "", gender: "", image: "" };
-
+  newUser = { id: "", first_name: "", last_name: "", email: "", password: "", gender: "", image: "" };
+  oldUsers:any;
+  duplicatedEmail = "";
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private registerService: RegisterdService,
     private router: Router,
     private titlePage: Title) {
-      titlePage.setTitle("Register");
+    titlePage.setTitle("Register");
   }
 
   ngOnInit(): void {
@@ -38,7 +39,15 @@ export class RegisterdComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
       confirmPassword: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
       gender: new FormControl('', [Validators.required])
-    })
+    }) // validate on form inputs
+
+
+    // get all registered users
+    this.registerService.getUser(this.email.value).subscribe(
+      (data) => {
+        this.oldUsers = data;
+      }
+    );
 
   }
 
@@ -73,26 +82,53 @@ export class RegisterdComponent implements OnInit {
     return true;
   } // check if passowrd and confirm password matching
 
-  fileSelected(event: any) {
+
+  emailExists(){
+    for (let i = 0; i < this.oldUsers.length; i++) {
+      // check if user exists in db or not
+      if (this.email.value == this.oldUsers[i].email) {
+        return true;
+      }
+    } // end of loop on users in json db
+    return false;
+  }
+
+  
+
+
+  imageSelected(event: any) {
     this.userImage = event.target.files[0];
     if (this.userImage.type !== "image/jpg" && this.userImage.type !== "image/jpeg" && this.userImage.type !== "image/png") {
       this.userHasImage = true;
       this.imgExtensionInvalid = true;
       return this.errorMsg = "Image extension must be (jpg, png)";
-    } else {
-      this.userHasImage = true;
-      this.imgExtensionInvalid = false;
-      return this.userImage = this.userImage.name;
-    } // user uploaded image
+    } // user uploaded invalid image extension
 
-  } // check if user upload image with valid extension or not
+    this.userHasImage = true;
+    this.imgExtensionInvalid = false;
+    const reader = new FileReader();
+    reader.readAsDataURL(this.userImage);
+    reader.onload = () => {
+      this.userImage = reader.result;
+    } // user uploaded image
+    return this.userImage;
+
+  }
+
+
 
   register() {
+
+    if(this.emailExists()){
+      this.duplicatedEmail = "This email already exists";
+      return this.registerForm.invalid;
+    } //email already exists
 
     if (this.registerForm.invalid) { // invalid form data
       this.registerForm.markAllAsTouched();
     } else {
 
+           
       if (!this.passwordMatching()) {
         this.passwordError = "Password and confirm password doesn't match";
         return this.registerForm.invalid;
@@ -108,18 +144,17 @@ export class RegisterdComponent implements OnInit {
       } // user upload valid image
 
       if (!this.userHasImage) {
-        this.userImage = 'default.png';
+        this.userImage = 'assets/images/users/default_user.png';
       } // user doesn't upload image
 
 
-
-        this.newUser.id = this.email.value,
-        this.newUser.first_name = this.firstName.value,
-        this.newUser.last_name = this.lastName.value,
-        this.newUser.password = this.password.value,
-        this.newUser.email = this.email.value,
-        this.newUser.gender = this.gender.value,
-        this.newUser.image = this.userImage;
+      this.newUser.first_name = this.firstName.value,
+      this.newUser.last_name = this.lastName.value,
+      this.newUser.password = this.password.value,
+      this.newUser.email = this.email.value,
+      this.newUser.gender = this.gender.value,
+      this.newUser.image = this.userImage;
+      this.newUser.id = this.email.value,
 
       this.registerService.addNewUser(this.newUser).subscribe();
       this.successMsg = "We Are Happy To Join US";
@@ -128,5 +163,6 @@ export class RegisterdComponent implements OnInit {
       }, 1500); //redirct to login page
       this.registerForm.reset();
     }
-  }
-}
+  } // end of register
+
+} // end of class

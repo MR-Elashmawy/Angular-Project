@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   constructor(private titlePage: Title) {
-    titlePage.setTitle("Profile");
+    titlePage.setTitle("Profile");    
   }
-
-  ngOnInit(): void {
+  
+  ngOnInit(): void {   
   }
 
 }
