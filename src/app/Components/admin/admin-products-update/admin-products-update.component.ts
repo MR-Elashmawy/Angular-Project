@@ -25,12 +25,6 @@ export class AdminProductsUpdateComponent implements OnInit {
         this.base64=this.product.image;
       }
       );
-      // this.form=this.build.group({
-      //   title: ['',Validators.required],
-      //   price: ['',Validators.required],
-      //   description: ['',Validators.required],
-      //   image: ['' ,Validators.required],
-      // })
   }
   getImagePath(event:any){
     const file=event.target.files[0];
