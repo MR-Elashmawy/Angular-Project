@@ -22,6 +22,7 @@ export class AdminProductsUpdateComponent implements OnInit {
     this.myService.getProductByID(this.id).subscribe(
       (data)=>{
         this.product= data;
+        this.base64=this.product.image;
       }
       );
       // this.form=this.build.group({
