@@ -15,7 +15,7 @@
     {
       "name": "Fatoma",
       "description": "Pasta",
-      "address": "kafr sakr",
+      "address": "Alexandria",
       "id": 3
     },
     {
@@ -31,16 +31,10 @@
       "id": 5
     },
     {
-      "name": "Eltahrer",
-      "description": "Koshryy",
-      "address": "Portsaid",
+      "name": "El-Tahrer",
+      "description": "Koshry",
+      "address": "Zag",
       "id": 6
-    },
-    {
-      "name": "kentaki",
-      "description": "chicken",
-      "address": "mansoura",
-      "id": 7
     }
   ]
 }

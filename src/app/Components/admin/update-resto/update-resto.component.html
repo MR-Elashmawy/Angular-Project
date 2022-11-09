@@ -1,16 +1,22 @@
 <div class="container">
-  <form [formGroup]="editResto" (ngSubmit="collection()")>
-    <div class="form-group">
+  <form [formGroup]="editResto" (click)="collection()" >
+    <div>
       <label>Name</label>
       <input type="text" class="form-control" placeholder="Enter Name" formControlName="name" />
     </div>
-    <div class="form-group">
+    <div>
       <label>Description</label>
       <input type="text" class="form-control" placeholder="Description" formControlName="description" />
     </div>
-    <div class="form-group">
+    <div>
       <label>Address</label>
       <input type="emal" class="form-control" placeholder="Enter Address" formControlName="address"/>
     </div>
-    <button type="submit" class="btn btn-secondary mt-2">Update</button>
-  </form>
+    <button  type="submit" class="btn btn-secondary mt-2">Update</button>
+    </form>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show mt-2 text-center" role="alert">
+      Data Has Been Updated Successfully.
+     <button (click)="closeAlert()" type="button" class="close xbtn" data-dismiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+     </button>
+     </div>

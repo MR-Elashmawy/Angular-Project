@@ -17,10 +17,10 @@
       <td>{{item.address}}</td>
       <td><i (click)="deleteResto(item.id)" class="fa fa-trash text-danger" style="font-size:25px;cursor:pointer;">
       </i>
-      <a [routerLink]="['/update/{{item.id}}']">
+      <a title="edit" routerLink="/update/{{item.id}}">
         <i class="fa fa-edit text-danger " style="font-size:25px;cursor:pointer;">
         </i>
-      </a>
+     </a>
       </td>
     </tr>
 
