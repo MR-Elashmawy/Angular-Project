@@ -1,1 +1,19 @@
-<p>profile-orders works!</p>
+<div class="box " style="margin-top: 80px;">
+  <div class="row">
+    <div class="col-md-4 col-sm-12" *ngFor="let order of allOrders" >
+      <div class="order">
+        <img src="{{order.image}}" alt="">
+        <div class="body">
+          <h4> Username: {{order.username}}</h4>
+          <h4> Details: {{order.details}}</h4>
+          <h4> Price: {{order.price}}</h4>
+          <h4> Date:{{order.date}}</h4>
+          <h4> status: {{order.status}}</h4>
+        </div>
+        <div *ngIf="order.status=='Pending'">
+          <button type="button" (click)="deletePending(order.id)">Cancel Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

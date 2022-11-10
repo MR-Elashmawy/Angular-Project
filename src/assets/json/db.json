@@ -19,32 +19,10 @@
     {
       "id": "nohamohamedsabry5506@gmail.com",
       "username": "Noha",
-      "orders": [
-        {
-          "Pending": {
-            "date": "01/10/2022",
-            "price": "1000",
-            "details": "test",
-            "id": 1
-          }
-        },
-        {
-          "Accepted": {
-            "date": "02/10/2022",
-            "price": "2000",
-            "details": "test",
-            "id": 2
-          }
-        },
-        {
-          "Completed": {
-            "date": "03/10/2022",
-            "price": "3000",
-            "details": "test",
-            "id": 3
-          }
-        }
-      ]
+      "date": "01/10/2022",
+      "price": "1000",
+      "details": "test",
+      "status": "Pending"
     },
     {
       "username": "Omar",

@@ -14,9 +14,6 @@ img{
   height: 200px;
   border-radius: 10px;
 }
-.body{
-  padding-top: 0;
-}
 :hover{
   transform: scale(1.01);
 }

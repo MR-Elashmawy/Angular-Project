@@ -1,17 +1,16 @@
-<section class="ms-auto me-auto">
-  <div class="box container">
-    <div class="row">
+<section >
+  <div class="box">
+    <div class="row  justify-content-center align-items-center h-100 ">
       <div class="btn-group" style="padding-top: 80px;">
-        <a class="btn btn-outline-dark" routerLink="/accepted">Accepted Orders</a>
-        <a class="btn btn-outline-dark" routerLink="/pending">Pending Orders</a>
-        <a class="btn btn-outline-dark" routerLink="/Completed">Completed Orders</a>
-        <a class="btn btn-outline-dark" routerLink="/updateProfile">Update Profile</a>
+        <a class="btn btn-outline-dark" routerLink="/profile/{{userID}}">Profile</a>
+        <a class="btn btn-outline-dark" routerLink="/orders">Orders</a>
+        <a class="btn btn-outline-dark" routerLink="/updateProfile/{{userID}}">Update Profile</a>
       </div>
 
       <div class="user" *ngIf="user;else FalseBlock">
           <img src="{{user.image}}" alt="">
             <input class="form-control" style="width:auto;" id="formFileSm" type="file" (change)="getImagePath($event)">
-          <div>
+
             <div class="d-flex">
               <div class="me-3">
                 <h4>First Name: </h4>
@@ -25,15 +24,35 @@
                 <h4>Last Name:</h4>
               </div>
               <div><input type="text" name="last_name" id="last_name" class="form-control"
-                value="{{user.last_name}}" #last_name></div>
+                value="{{user.last_name}}" style="width:100%;" #last_name></div>
             </div>
-            <h4>E-mail: <input type="text" name="email" id="email" class="form-control"
-              value="{{user.email}}" #email></h4>
-              <h4>Password: <input type="password" name="email" id="email" class="form-control"
-                value="{{user.password}}" #password ></h4>
-            <h4>gender: <input type="text" name="gender" id="gender" class="form-control"
-              value="{{user.gender}}" #gender ></h4>
+
+            <div class="d-flex">
+              <div class="me-3">
+                <h4>E-mail:</h4>
+              </div>
+              <div><input type="text" name="email" id="email" class="form-control"
+                value="{{user.email}}" #email></div>
+            </div>
+
+            <div class="d-flex">
+              <div class="me-3">
+                <h4>Password:</h4>
+              </div>
+              <div><input type="password" name="email" id="email" class="form-control"
+                value="{{user.password}}" #password ></div>
+            </div>
+
+            <div class="d-flex">
+              <div class="me-3">
+                <h4>gender:</h4>
+              </div>
+              <div><input type="text" name="gender" id="gender" class="form-control"
+                value="{{user.gender}}" #gender ></div>
+
+
           </div>
+
           <div class="form-group text-center">
             <button name="update" id="update" type="submit" style="width: 200px" class="btn btn-primary" (click)="updateUser(first_name,last_name,email,gender,password)">Save</button>
         </div>

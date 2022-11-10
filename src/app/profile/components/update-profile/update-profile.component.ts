@@ -12,16 +12,16 @@ import { ProfileService } from '../../services/profile.service';
 export class UpdateProfileComponent implements OnInit {
 
   user:any;
-  id:any;
+  userID:any;
   base64:any='';
   form:FormGroup|any;
   constructor(private titlePage: Title,private myActivated: ActivatedRoute, public profileService:ProfileService,private router: Router) {
     titlePage.setTitle("Update Profile");
-    this.id = myActivated.snapshot.params['id'];
+    this.userID = myActivated.snapshot.params['id'];
   }
 
   ngOnInit(): void {
-    this.profileService.getuserByID(this.id).subscribe(
+    this.profileService.getuserByID(this.userID).subscribe(
       (data)=>{
         this.user= data;
         this.base64=this.user.image;
@@ -47,7 +47,7 @@ export class UpdateProfileComponent implements OnInit {
     password:password.value,
     image:this.base64
     }
-    this.profileService.updateUser(this.id, updatedUser).subscribe();
+    this.profileService.updateUser(this.userID, updatedUser).subscribe();
     alert("Profile Updated successfully");
     setTimeout(() => {
       this.router.navigate(['/updateProfile/:id']);

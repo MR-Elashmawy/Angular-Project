@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from './products/components/product-details/p
 import { RegisterdComponent } from './registerd/components/registerd.component';
 import { HomeComponent } from './U.home/components/home.component';
 import { UpdateProfileComponent } from './profile/components/update-profile/update-profile.component';
+import { ProfileOrdersComponent } from './profile/components/profile-orders/profile-orders.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:"login", component:LogInComponent},
   {path:"register", component:RegisterdComponent},
   {path:"profile/:id", component:ProfileComponent, canActivate:[AuthGuard]},
-  {path:"updateProfile/:id",component:UpdateProfileComponent}
+  {path:"updateProfile/:id",component:UpdateProfileComponent},
+  {path:"orders" , component:ProfileOrdersComponent}
   // {path:"**", component:HomeComponent}
   // {path:"**", component:ErrorComponent}
 ];
