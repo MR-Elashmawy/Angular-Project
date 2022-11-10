@@ -1,5 +1,24 @@
-<div class="container pt-5">
-   <section class="vh-100 pt-5">
-    <h1>Profile</h1>
-   </section>
-</div>
+<div class="box container ">
+  <div class="row " >
+    <div class="btn-group" style="padding-top: 80px;">
+      <a class="btn btn-outline-dark" routerLink="/accepted">Accepted Orders</a>
+      <a class="btn btn-outline-dark" routerLink="/pending">Pending Orders</a>
+      <a class="btn btn-outline-dark" routerLink="/Completed">Completed Orders</a>
+      <a class="btn btn-outline-dark" routerLink="/updateProfile/{{userID}}">Update Profile</a>
+    </div>
+    <div class="col-md-3 col-sm-12"  >
+      <div class="user" *ngIf="user;else FalseBlock">
+        <img src="{{user.image}}" alt="">
+        <div class="body">
+          <h4>First Name: {{user.first_name}} </h4>
+          <h4>Last Name: {{user.last_name}}</h4>
+          <h4 style="width: 500px;"> E-mail: {{user.email}}</h4>
+          <h4>gender: {{user.gender}}</h4>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #FalseBlock>
+    <h1 >Loading...</h1>
+  </ng-template>

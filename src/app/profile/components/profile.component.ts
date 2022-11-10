@@ -1,5 +1,8 @@
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProfileService } from '../services/profile.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -7,11 +10,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private titlePage: Title) {
+  userID:any;
+  user:any;//undefined
+  constructor(private titlePage: Title,private myActivated: ActivatedRoute, private profileService: ProfileService,private router: Router) {
     titlePage.setTitle("Profile");
+    this.userID= myActivated.snapshot.params["id"];
+    console.log(this.userID);
+   }
+   ngOnInit(): void {
+    let that = this;
+    this.profileService.getuserByID(this.userID).subscribe(
+      {
+        next(data){
+          that.user= data;
+        },
+        error(err){console.log(err)}
+      }
+    )
   }
-
-  ngOnInit(): void {
-  }
-
 }

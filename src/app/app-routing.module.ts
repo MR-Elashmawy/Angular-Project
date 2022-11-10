@@ -10,6 +10,7 @@ import { AllProductsComponent } from './products/components/all-products/all-pro
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 import { RegisterdComponent } from './registerd/components/registerd.component';
 import { HomeComponent } from './U.home/components/home.component';
+import { UpdateProfileComponent } from './profile/components/update-profile/update-profile.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:"contact", component:ContactComponent},
   {path:"login", component:LogInComponent},
   {path:"register", component:RegisterdComponent},
-  {path:"profile", component:ProfileComponent, canActivate:[AuthGuard]},
+  {path:"profile/:id", component:ProfileComponent, canActivate:[AuthGuard]},
+  {path:"updateProfile/:id",component:UpdateProfileComponent}
   // {path:"**", component:HomeComponent}
   // {path:"**", component:ErrorComponent}
 ];

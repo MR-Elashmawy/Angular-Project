@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './../../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,16 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   loggedIn = false;
-  constructor(public authentication:AuthService, private router:Router) { 
+  userID:any;
+  constructor(public authentication:AuthService,private myActivated: ActivatedRoute, private router:Router) {
     if(sessionStorage.getItem('user')){
       this.loggedIn = true;
+      this.userID=JSON.parse(sessionStorage.getItem('user')!).id;
     }
-
   }// check of user logged in or not
 
   logout(){
     this.authentication.isLoggedIn = false;
-    sessionStorage.setItem('user', '');
+    sessionStorage.setItem('user','');
 
   } //end of logout
 
