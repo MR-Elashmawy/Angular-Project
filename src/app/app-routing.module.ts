@@ -16,7 +16,6 @@ import { ProfileOrdersComponent } from './profile/components/profile-orders/prof
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"services", component:AllProductsComponent},
-  // {path:"services", component:AllProductsComponent, canActivate:[AuthGuard]},
   {path:"services/details/:id", component:ProductDetailsComponent},
   {path:"cart", component:CartComponent},
   {path:"about", component:AboutComponent},
@@ -25,9 +24,8 @@ const routes: Routes = [
   {path:"register", component:RegisterdComponent},
   {path:"profile/:id", component:ProfileComponent, canActivate:[AuthGuard]},
   {path:"updateProfile/:id",component:UpdateProfileComponent},
-  {path:"orders" , component:ProfileOrdersComponent}
-  // {path:"**", component:HomeComponent}
-  // {path:"**", component:ErrorComponent}
+  {path:"orders" , component:ProfileOrdersComponent},
+  // {path:"orders/:id" , component:ProfileOrdersComponent}
 ];
 
 @NgModule({

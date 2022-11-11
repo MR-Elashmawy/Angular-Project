@@ -31,6 +31,7 @@ export class ProfileOrdersComponent implements OnInit {
     }
     );
   }
+  
   deletePending(order:any){
     this.deletedOrder.splice(order-1,1)
     this.profileService.deletePending(order).subscribe((result)=>{

@@ -20,6 +20,9 @@ export class ProfileService {
     return this.myClient.put(this.BASE_URL_USER+"/"+ id, userUpdated);
   }
 
+  
+  ///////////////////////////////// ORDERRRRRR ///////////////////////////////////////
+
   getAllOrders(){
     return this.myClient.get(this.BASE_URL_ORDERS);
   }
