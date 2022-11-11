@@ -9,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   loggedIn = false;
+
+  user:any;
+
   constructor(public authentication:AuthService, private router:Router) { 
     if(sessionStorage.getItem('user')){
       this.loggedIn = true;
     }
+
+    this.user = sessionStorage.getItem('user');
+    console.log(JSON.parse(this.user).id);
+    ;
+
 
   }// check of user logged in or not
 
