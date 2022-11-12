@@ -1,0 +1,15 @@
+<div class="card productCard">
+  <a routerLink="/services/{{data.id}}">
+    <img src="{{data.image}}" class="card-img-top imgstyle" alt="..." style="height: 172px;">
+    <h5 class="card-title">{{data.title}}</h5>
+    <p style="text-overflow:ellipsis;text-decoration: none;" class="card-text text-muted">{{data.description}}</p>
+  </a>
+  <!-- <div class="card-body">
+    <button class="btn btn-success" *ngIf="!addButton" (click)="addButton = true">Add to Cart</button>
+    <div class="f-flex w-50" *ngIf="addButton">
+      <input type="number" class="form-control" [(ngModel)]="amount">
+      <button class="btn btn-danger" (click)="add();addButton = false;">Add</button>
+    </div>
+    <span class="card-title">Price : {{data.price}}$</span>
+  </div> -->
+</div>
