@@ -1,0 +1,6 @@
+npm i json-server -g                      =======> install json server
+
+json-server --watch orders.json   		=======> run json file  __path__ 
+
+
+json-server --watch src/assets/json/db.json

@@ -1,0 +1,71 @@
+<app-product-header></app-product-header>
+<section class="vh-100 py-5 mb-5">
+  <div class="container py-2">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="mt-5 col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Edit product Informations</h3>
+
+                <div class="col-lg-4 col-md-6 col-sm-8 mx-auto mb-1">
+                  <div class="col-md-6 mb-4">
+                    <!-- <label for="image" class="form-label"> Product Image</label> -->
+                    <!-- <img src="{{product.image}}" style="height: 70px; width: 70px;"> -->
+                    <!-- <input class="form-control form-control-sm" style="width:300px;" id="formFileSm" type="file"
+                      (change)="getImagePath($event)"> -->
+                  </div>
+                    <div class="col-12">
+                        <div *ngIf="product">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" style="width:300px;" name="title" id="title" class="form-control"
+                                            value="{{product.title}}" #title>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="product-price" class="form-label">Total price</label>
+                                        <input type="number" name="product-price" id="product-price" class="form-control"
+                                        value="{{product.price}}" #price>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="product Description" style="height: 100px; width:300px;" #details>{{product.details}}</textarea>
+                                            <label>Order Description</label>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                  <div class="mb-3">
+                                      <label for="product-price" class="form-label">Product Type</label>
+                                      <input type="text" name="product-price" id="product-price" class="form-control"
+                                      value="{{product.type}}" #type>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 pb-2">
+                                <div class="form-outline"> 
+                                  <label class="me-2" for="">Category Name</label>
+                                  <select name="category_id">
+                                    <option selected value="1" #category_id>Category Name</option>
+                                  </select>
+                                </div>
+                              </div>
+                                <div class="form-group text-center">
+                                    <button name="update" id="update" type="submit" style="width:200px;" class="btn btn-outline-warning" (click)="updateProduct(title, price, type, details, category_id)">
+                                      Update product
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
