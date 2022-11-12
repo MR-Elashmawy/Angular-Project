@@ -1,0 +1,26 @@
+<section class="vh-100">
+  <div class="btn-group" style="padding-top: 80px;">
+    <a class="btn btn-outline-dark" routerLink="/profile">My Profile</a>
+    <a class="btn btn-outline-dark" routerLink="/updateProfile/{{userID}}">Update Profile</a>
+    <a class="btn btn-outline-dark" routerLink="/orders">My Orders</a>
+  </div>
+  <div class="box">
+    <div class="row">
+      <div class="col-md-4 col-sm-12" *ngFor="let order of allOrders">
+        <div class="order">
+          <img src="{{order.image}}" alt="">
+          <div class="body">
+            <h4> Details: {{order.details}}</h4>
+            <h4> Price: {{order.total_price}}</h4>
+            <h4> Date:{{ orderDateTime}}</h4>
+            <h4> status: {{order.status}}</h4>
+          </div>
+          <div *ngIf="order.status=='Pending'">
+            <button type="button" (click)="deletePending(order.id)">Cancel Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br>
