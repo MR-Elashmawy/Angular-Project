@@ -1,0 +1,32 @@
+.slider_one {
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.slider_one .container .first {
+  animation: in_down 4s ease;
+  -webkit-animation: in_down 4s ease;
+}
+
+.slider_one .container .first .content {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.slider_one .container .second {
+  padding-top: 40px;
+  animation: in_right 4s ease;
+  -webkit-animation: in_right 4s ease;
+}
+
+.slider_one .container .second .icon .custom,
+.slider_one .container .third .icon .custom,
+.slider_one .container .third .icon .custom {
+  font-size: 3.7rem;
+}
+
+.slider_one .container .third {
+  padding-top: 40px;
+  animation: in_right 4s ease;
+  -webkit-animation: in_right 4s ease;
+}

@@ -1,0 +1,70 @@
+<!-- Order Update Content -->
+<section class="order-update">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-1">
+                <div class="col-12 text-center text-uppercase">
+                    <h2 class="text-warning my-4">Order information</h2>
+                </div>
+            </div>
+
+            <main class="row">
+                <div class="col-lg-4 col-md-6 col-sm-8 mx-auto mb-1">
+                    <div class="col-12">
+                        <div *ngIf="order">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">User Id</label>
+                                        <input type="text" name="username" id="username" class="form-control"
+                                            value="{{order.user_id}}" #name>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="order-date" class="form-label">Order Date</label>
+                                        <input type="text" name="order-date" id="order-date" class="form-control"
+                                        value="{{orderDateTime}}" #date>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="order-price" class="form-label">Total price</label>
+                                        <input type="text" name="order-price" id="order-price" class="form-control"
+                                        value="{{order.total_price}}" #price>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Order details" style="height: 100px" #details>{{order.details}}</textarea>
+                                            <label>Oder Detalis</label>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-4">
+                                        <label for="order-status" class="form-label me-2">Order Status</label>
+                                        <select [(ngModel)] = order.status class="custom-select w-50" #status>
+                                            <option *ngFor="let status of allStatus" [value]="status">
+                                                {{status}}
+                                            </option>
+                                          </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <button name="update" id="update" type="submit" class="btn btn-outline-warning" (click)="updateOrder(name, date, price, details, status)">Update Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class="alert alert-success text-center m-auto col-6" *ngIf="successMsg">
+                {{successMsg}} 
+         </div>
+        </div>
+    </div>
+</section>
+<!-- Order Update Content -->

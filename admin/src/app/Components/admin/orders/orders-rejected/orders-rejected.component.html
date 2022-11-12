@@ -1,0 +1,34 @@
+<!-- Rejected Orders Content -->
+<main>
+  <div class="container">
+    <app-orders-routes></app-orders-routes>
+
+    <div class="data">
+      <div class="data-head">
+        <span>#</span>
+        <span>User Id</span>
+        <span>Details</span>
+        <span>Price</span>
+        <span>Date</span>
+        <span>Status</span>
+        <span>Actions</span>
+      </div>
+
+      <div class="data-body" *ngFor="let order of allOrders">
+        <div class="show-data" *ngIf="order.status=='Rejected'">
+          <span>{{order.id}}</span>
+          <span>{{order.user_id}}</span>
+          <span>{{order.details}}</span>
+          <span>{{order.total_price}}</span>
+          <span>{{orderDateTime}}</span>
+          <span>{{order.status}}</span>
+          <span class="d-flex gap-3"><a title="edit" routerLink="/dashboard/orders/{{order.id}}">
+            <i class="text-warning bi bi-pencil-square"></i>
+          </a>
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- Rejected Orders Content -->

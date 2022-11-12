@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talabat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="/src/assets/js/jQuery-P.js"></script>
+  <script src="/src/assets/js/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <!-- ################## start navbar ########### -->
+  <section class="nav_sec fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" routerLink="/"><img src="../assets/images/logo.svg" alt="sorry not found"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav" id="myBtnContainer">
+              <li class="nav-item ml-4 custom_li">
+                <a routerLink="/" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item ml-4 custom_li" id="lione">
+                <a  routerLink="/services" class="nav-link active" aria-current="page" >Services</a>
+              </li>
+              <li class="nav-item ml-4 custom_li">
+                <a  routerLink="/about" class="nav-link">About us</a>
+              </li>
+              <li class="nav-item ml-4 custom_li">
+                <a  routerLink="/contact" class="nav-link">Contact us </a>
+              </li>
+              <li *ngIf='(!authentication.isLoggedIn)' class="nav-item ml-4 custom_li login ">
+                <a routerLink="/login" class="nav-link"> Log in </a>
+              </li>
+              <li  *ngIf='(authentication.isLoggedIn)' class="nav-item ml-4 custom_li login ">
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Welcome
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item ml-4 custom_li">
+                      <a routerLink="/profile" class="nav-link text-white">Profile</a>
+                    </li>
+                    <li class="nav-item ml-4 custom_li">
+                      <a (click)="logout()" routerLink="/" class="nav-link text-white"> Logout</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item ml-4 custom_li">
+                <a routerLink="/cart" class="nav-link" > <span class="fa fa-shopping-cart" id="cart_icon" style="color:azure"></span>
+                  <!-- <span style="color:azure" class="cart-counter"> {{cartProducts.length}} </span> -->
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <!-- ##################end navbar ######################## -->
+
+  <script src="https://kit.fontawesome.com/8321aaa57d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <script src="/src/assets/js/main.js"></script>
+</body>
+
+</html>
